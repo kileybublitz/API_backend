@@ -1,8 +1,6 @@
 import { Pool } from 'pg'
 import { Response, Request } from 'express'
-import { config } from 'dotenv';
 
-var c = config({path: '../.env'});
 
 const pool = new Pool({
     database: process.env.PGDATABASE,

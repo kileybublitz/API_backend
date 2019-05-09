@@ -1,9 +1,12 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import {getTodos, getTodoById, createTodo, updateTodo, deleteTodo} from './queries'
+import { config } from 'dotenv';
+
+config();
 
 const app = express()
-const port = 3000
+const port = 5000
 
 app.use(bodyParser.json())
 app.use(
