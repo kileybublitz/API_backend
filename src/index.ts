@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import {getTodos, getTodoById, createTodo, updateTodo, deleteTodo} from './queries'
 import { config } from 'dotenv';
+import cors from 'cors';
 
 config();
 
@@ -14,9 +15,10 @@ app.use(
         extended: false
     })
 )
+app.use(cors());
 
 app.get('/', (request, response) => {
-response.json({info: 'Test'})
+    response.json({info: 'Test'})
 })
 
 app.get('/todos', getTodos)
